@@ -2,16 +2,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client'; // Import từ 'react-dom/client'
 import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Nếu bạn đang sử dụng Bootstrap
+import { AuthProvider } from './contexts/AuthContext';
 
 const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container); // Sử dụng createRoot
 
-// Tạo root với ReactDOM.createRoot
-const root = ReactDOM.createRoot(container);
-
-// Render ứng dụng
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );
